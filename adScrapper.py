@@ -1,7 +1,7 @@
 from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 from bs4 import BeautifulSoup as bs
-from parser import initParse
+from modules import parser
 import os
 import time
 from PIL import Image
@@ -20,7 +20,7 @@ driverType = "chrome"
 driver = webdriver.Chrome(executable_path=driverPath)
 
 ## Create Dir
-myUrl = initParse()
+myUrl = parser.initParse()
 timestr = time.strftime("%Y%m%d-%H%M%S")
 filePath = os.getcwd() + '/searchResult/ ' + driverType + ' - ' + timestr
 os.mkdir(filePath)
