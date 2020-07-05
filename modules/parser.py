@@ -1,4 +1,6 @@
 import argparse
+import time
+
 
 def initParse():
     # Initiate the parser
@@ -17,9 +19,12 @@ def initParse():
     args = parser.parse_args()
 
     if(args.url == None):
-        args.url = "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=BR&impression_search_field=has_impressions_lifetime&view_all_page_id=164299666946033&sort_data[direction]=desc&sort_data[mode]=relevancy_monthly_grouped"
+        args.url = "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=BR&impression_search_field=has_impressions_lifetime&view_all_page_id=59685491632&sort_data[direction]=desc&sort_data[mode]=relevancy_monthly_grouped"
 
     if(args.b == None):
         args.b = "Chrome"
+
+    if(args.n == None):
+        args.n = time.strftime("%Y%m%d-%H%M%S")
 
     return args
