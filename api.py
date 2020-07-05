@@ -32,7 +32,11 @@ def iterate_files(service, path, file_id):
                                                 fields='id').execute()
             continue
         elif filename.endswith(".html"):
-            print(filename)
+            file_metadata = {'name': filename, 'parents': [file_id['id']]}
+            media = MediaFileUpload(path + filename, mimetype='text/html')
+            file = service.files().create(body=file_metadata,
+                                                media_body=media,
+                                                fields='id').execute()
             continue
 
 def upload(name, folder_path):
