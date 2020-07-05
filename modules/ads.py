@@ -2,7 +2,7 @@ import os
 import time
 import io
 from PIL import Image
-from random import randint
+
 
 def save_ad_pictures(driver, folder_path):
     scroll_to_page_floor(driver)
@@ -17,16 +17,9 @@ def save_ad_pictures(driver, folder_path):
 
 
 def create_ads_folder(name):
-    folder_path = os.getcwd() + '/searchResult/' + name +'/'
-    path = folder_path
-
-    if(os.path.isdir(folder_path) == True):
-        while(folder_path == path):
-            folder_path = os.getcwd() + '/searchResult/' + name + '-' + str(randint(100, 999)) + '/'
-
+    folder_path = os.getcwd() + '/searchResult/' + name
     os.mkdir(folder_path)
     return folder_path
-    
 
 
 def scroll_to_page_floor(driver):
