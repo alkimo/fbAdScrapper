@@ -24,6 +24,7 @@ def create_folder(service, name):
 def iterate_files(service, path, file_id):
 
     for filename in os.listdir(path):
+        print(filename)
         if(filename.endswith(".png")):
             file_metadata = {'name': filename, 'parents': [file_id['id']]}
             media = MediaFileUpload(path + filename, mimetype='image/png')
@@ -34,6 +35,13 @@ def iterate_files(service, path, file_id):
         elif filename.endswith(".html"):
             file_metadata = {'name': filename, 'parents': [file_id['id']]}
             media = MediaFileUpload(path + filename, mimetype='text/html')
+            file = service.files().create(body=file_metadata,
+                                                media_body=media,
+                                                fields='id').execute()
+            continue
+        elif filename.endswith(".pdf"):
+            file_metadata = {'name': filename, 'parents': [file_id['id']]}
+            media = MediaFileUpload(path + filename, mimetype='application/pdf')
             file = service.files().create(body=file_metadata,
                                                 media_body=media,
                                                 fields='id').execute()
