@@ -2,6 +2,9 @@ import os
 import time
 import io
 from PIL import Image
+from time import gmtime, strftime
+import getpass
+
 
 
 def save_ad_pictures(driver, folder_path):
@@ -17,10 +20,15 @@ def save_ad_pictures(driver, folder_path):
 
 
 def create_ads_folder(name):
-    folder_path = os.getcwd() + '/searchResult/' + name
-    os.mkdir(folder_path)
-    return folder_path
-
+    try:
+        folder_path = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name
+        os.mkdir(folder_path)
+        return folder_path
+    except:
+        time_now = strftime("%Y-%m-%d_%H-%M-%S", gmtime())
+        folder_path = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name + ' - ' + time_now
+        os.mkdir(folder_path)
+        return folder_path
 
 def scroll_to_page_floor(driver):
     last_height = driver.execute_script("return document.body.scrollHeight")

@@ -6,17 +6,18 @@ import modules.api
 import time
 from random import randint
 import os
+import getpass
 
 
 def treat_cli_name(name):
-    a = os.getcwd() + '/searchResult/' + name + '/'
+    a = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name + '/'
     random_value=name
 
     if(os.path.isdir(a) == True):
-        b = os.getcwd() + '/searchResult/' + name + '/'
+        b = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name + '/'
         while(a == b):
             random_value=name + '-' + str(randint(100, 999))
-            a = os.getcwd() + '/searchResult/' + name + '-' + str(randint(100, 999)) + '/'
+            a = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name + '-' + str(randint(100, 999)) + '/'
     return random_value
     
 
@@ -30,7 +31,7 @@ def main():
     modules.ads.save_ad_pictures(driver, ads_folder_path)
     modules.html.save_html(driver, ads_folder_path)
     modules.driver_utils.save_as_pdf(ads_folder_path + '/')
-    modules.api.upload(cli_input.n, os.getcwd() + '/searchResult/' + cli_input.n + '/')
+    modules.api.upload(cli_input.n, '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + cli_input.n + '/')
 
 if __name__ == "__main__":
     main()

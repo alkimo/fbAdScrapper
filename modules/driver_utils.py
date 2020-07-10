@@ -4,13 +4,16 @@ import os
 import pdfkit 
 
 
-
 def select_driver(browser):
     if browser == "Chrome" or browser == "chrome":
-        driver_path = os.getcwd() + '/driver/Chromedriver/chromedriver'
-        return webdriver.Chrome(executable_path=driver_path)
+        driver_path = os.getcwd() + '/Desktop/fbScrapper/driver/Chromedriver/chromedriver'
+        chrome_options = webdriver.chrome.options.Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        return webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
     elif browser == "Firefox" or browser == "firefox":
-        driver_path = os.getcwd() + '/driver/Gecko/geckodriver'
+        driver_path = os.getcwd() + '/Desktop/fbScrapper/driver/Gecko/geckodriver'
         return webdriver.Firefox(executable_path=driver_path)
 
 

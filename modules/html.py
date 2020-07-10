@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup as bs
+import os
+import getpass
 
 
 def save_html(driver, ads_folder_path):
@@ -8,7 +10,7 @@ def save_html(driver, ads_folder_path):
     driver.close()
     ads = soup.find_all("div", class_="_8n-_")
 
-    with open('template.html', 'r') as f:
+    with open('/home/' + getpass.getuser() + '/Desktop/fbScrapper/template.html', 'r') as f:
         template = f.read()
         template_soup = bs(template, 'html.parser')
 
