@@ -2,7 +2,7 @@
 <h2>How to run:</h2>
 
 ```shell
-python3 script.py -h
+$ python3 script.py -h
 usage: script.py [-h] [-url URL] [-b B] [-n N]
 
 optional arguments:
@@ -35,14 +35,14 @@ $ git clone git@github.com:alkimo/fbAdScrapper.git
 $ cd fbAdScrapper
 $ python3 -m venv env
 $ source env/bin/activate
-$ pip3 install -r requirements.txt
+(env) $ pip3 install -r requirements.txt
 ```
 
 ### Run test
 
 > Run test to generate token
 ```shell
-(env)$ python3 script.py -n "Teste"
+(env) $ python3 script.py -n "Teste"
 ```
 
 ### Allow all permits
@@ -67,5 +67,5 @@ optional arguments:
 > Example: Every 5 days, teste folder, using Google Chrome
 
 ```shell
-$ python3 scheduler.py -d "5" -n "teste" -b "Chrome" -url "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ALL&impression_search_field=has_impressions_lifetime&view_all_page_id=13892765435&sort_data[direction]=desc&sort_data[mode]=relevancy_monthly_grouped"
+(env) $ python3 scheduler.py -d "5" -n "teste" -b "Chrome" -url "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ALL&impression_search_field=has_impressions_lifetime&view_all_page_id=13892765435&sort_data[direction]=desc&sort_data[mode]=relevancy_monthly_grouped"
 ```
