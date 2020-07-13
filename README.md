@@ -47,7 +47,7 @@ $ source env/bin/activate
 
 ### Allow all permits
 
-![Recordit GIF](https://im4.ezgif.com/tmp/ezgif-4-eb032f92cf6f.gif)
+![GIF](https://i.ibb.co/ws7mkFD/ezgif-com-video-to-gif.gif)
 
 # Crontab Scheduler
 <h2>How to run:</h2>
