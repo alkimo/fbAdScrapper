@@ -1,6 +1,7 @@
 import schedulerParser
 from crontab import CronTab
 import getpass
+import constant
 
 def main():
     scheduler_input = schedulerParser.initParse()
@@ -15,8 +16,8 @@ def main():
     print(total_args)
     
     cron = CronTab(user='null')
-    cron_search = 'source /home/' + getpass.getuser() + '/Desktop/fbScrapper/env/bin/activate; /home/null/Desktop/fbScrapper/env/bin/python3 /home/' + getpass.getuser() + '/Desktop/fbScrapper/script.py -n \"' + \
-        scheduler_input.n + '\" -u \"' + scheduler_input.url + '\" -b \"' + scheduler_input.b + '\" > /home/' + getpass.getuser() +'/Desktop/erros.log 2>&1'
+    cron_search = 'source ' +  constant.SCRIPT_PATH + 'env/bin/activate; ' + constant.SCRIPT_PATH + '/env/bin/python3 ' + constant.SCRIPT_PATH + 'script.py -n \"' + \
+        scheduler_input.n + '\" -u \"' + scheduler_input.url + '\" -b \"' + scheduler_input.b + '\" > ' + constant.SCRIPT_PATH + 'erros.log 2>&1'
     
     job = cron.new(command=cron_search)
 
