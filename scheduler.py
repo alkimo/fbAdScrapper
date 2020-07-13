@@ -1,14 +1,3 @@
-#!/usr/bin/python3
-
-# import os
-# from crontab import CronTab
-
-# cron = CronTab(user='null')
-# job = cron.new(command='/usr/bin/python3 /home/null/Desktop/fbScrapper/b.py')
-# job.minute.every(2)
-
-# cron.write()
-
 import schedulerParser
 from crontab import CronTab
 import getpass

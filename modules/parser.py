@@ -10,7 +10,7 @@ def initParse():
     parser.add_argument("-url", help="Url do ad do facebook")
 
     # Nome do browser a ser usado
-    parser.add_argument("-b", help="Primeiro valor de pesquisa")
+    parser.add_argument("-b", help="Browser a ser utilizado: Chrome ou Firefox")
 
     # Nome da pasta para salvar os dados
     parser.add_argument("-n", help="Nome da pasta a salvar os dados")
