@@ -19,14 +19,14 @@ def save_ad_pictures(driver, folder_path):
         iterator += 1
 
 
-def create_ads_folder(name):
+def create_ads_folder(name , path):
     try:
-        folder_path = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name
+        folder_path = path + 'searchResult/' + name
         os.mkdir(folder_path)
         return folder_path
     except:
         time_now = strftime("%Y-%m-%d_%H-%M-%S", gmtime())
-        folder_path = '/home/' + getpass.getuser() + '/Desktop/fbScrapper/searchResult/' + name + ' - ' + time_now
+        folder_path = path + 'searchResult/' + name + '-' + time_now
         os.mkdir(folder_path)
         return folder_path
 

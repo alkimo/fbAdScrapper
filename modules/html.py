@@ -3,14 +3,14 @@ import os
 import getpass
 
 
-def save_html(driver, ads_folder_path):
+def save_html(driver, ads_folder_path, path):
     html = driver.execute_script("return document.body.innerHTML;")
     soup = bs(html, 'html.parser')
 
     driver.close()
     ads = soup.find_all("div", class_="_8n-_")
 
-    with open('/home/' + getpass.getuser() + '/Desktop/fbScrapper/template.html', 'r') as f:
+    with open(path + 'template.html', 'r') as f:
         template = f.read()
         template_soup = bs(template, 'html.parser')
 
