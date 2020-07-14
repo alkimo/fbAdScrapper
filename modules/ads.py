@@ -4,10 +4,12 @@ import io
 from PIL import Image
 from time import gmtime, strftime
 import getpass
+from selenium.webdriver.common.keys import Keys
 
 
 
 def save_ad_pictures(driver, folder_path):
+    driver.execute_script("document.body.style.transform = 'scale(0.9)'")
     scroll_to_page_floor(driver)
     images = driver.find_elements_by_class_name('_99s5')
     iterator = 1
