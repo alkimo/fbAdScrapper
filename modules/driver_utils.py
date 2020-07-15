@@ -15,7 +15,9 @@ def select_driver(browser, path):
         return webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
     elif browser == "Firefox" or browser == "firefox":
         driver_path = path + 'driver/Gecko/geckodriver'
-        return webdriver.Firefox(executable_path=driver_path)
+        firefox_options = webdriver.firefox.options.Options()
+        firefox_options.add_argument('--headless')
+        return webdriver.Firefox(executable_path=driver_path, firefox_options=firefox_options)
 
 
 def save_as_pdf(path_to_data):
