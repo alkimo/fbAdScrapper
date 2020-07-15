@@ -2,6 +2,7 @@ import schedulerParser
 from crontab import CronTab
 import getpass
 import constant
+import getpass
 
 def main():
     scheduler_input = schedulerParser.initParse()
@@ -15,7 +16,7 @@ def main():
 
     print(total_args)
     
-    cron = CronTab(user='null')
+    cron = CronTab(user=getpass.getuser())
     cron_search = 'source ' +  constant.SCRIPT_PATH + 'env/bin/activate; ' + constant.SCRIPT_PATH + '/env/bin/python3 ' + constant.SCRIPT_PATH + 'script.py -n \"' + \
         scheduler_input.n + '\" -u \"' + scheduler_input.url + '\" -b \"' + scheduler_input.b + '\" > ' + constant.SCRIPT_PATH + 'erros.log 2>&1'
     
