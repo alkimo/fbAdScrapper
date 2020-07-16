@@ -7,9 +7,9 @@ usage: script.py [-h] [-url URL] [-b B] [-n N]
 
 optional arguments:
   -h, --help  show this help message and exit
-  -url URL    Url do ad do facebook
-  -b B        Browser a ser usado
-  -n N        Nome da pasta a salvar os dados
+  -url URL    Url of facebook search ads page
+  -b B        Name of the browser, firefox is default
+  -n N        Folder name to save data and upload to google drive
 ```
 
 ## Installation
