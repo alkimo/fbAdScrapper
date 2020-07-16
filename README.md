@@ -58,10 +58,15 @@ usage: scheduler.py [-h] [-url URL] [-b B] [-n N] [-m M] [-hour HOUR] [-d D] [-m
 
 optional arguments:
   -h, --help  show this help message and exit
-  -url URL    Url do ad do facebook
-  -b B        Primeiro valor de pesquisa
-  -n N        Nome da pasta a salvar os dados
-  -m M        Minutos de intervalo para repetição do script pelo crontab, 0 a 59
+  -url URL    Url of the search page of facebook
+  -b B        Name of the browser to be used, firefox is default
+  -n N        Name of the folder to save data, and upload to google drive
+  -m M        Minutes interval between automatic searches, 1 - 59
+  -hour HOUR  Hours interval between automatic searches, 1 - 23
+  -d D        Day of the month to program automatic searches, 1 a 31
+  -mon MON    Month to program automatic searches, 1 a 12
+  -dow DOW    Day of the week to program automatic searches, 0 a 7
+
 ```
 
 > Example: Every 5 days, teste folder, using Google Chrome
@@ -69,3 +74,23 @@ optional arguments:
 ```shell
 (env) $ python3 scheduler.py -d "5" -n "teste" -b "Chrome" -url "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ALL&impression_search_field=has_impressions_lifetime&view_all_page_id=13892765435&sort_data[direction]=desc&sort_data[mode]=relevancy_monthly_grouped"
 ```
+
+# Crontab Scheduler
+<h2>How to stop the crontab:</h2>
+
+### Delete all cron jobs
+
+![GIF](https://i.ibb.co/y8qCx2F/pt1.gif)
+
+
+### Kill all cron processes
+
+> Use HTOP to find all cron jobs
+
+> Write down all cron processes PIDs
+
+> Use 'sudo kill' to kill all cron processes
+
+### Reload cron service
+
+![GIF](https://i.ibb.co/2N5jMBn/Cron-Reload.gif)
